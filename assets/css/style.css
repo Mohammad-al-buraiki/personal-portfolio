@@ -612,7 +612,7 @@ main {
   margin-bottom: 20px;
 }
 
-.testimonials-list {
+/* .testimonials-list {
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
@@ -624,6 +624,18 @@ main {
   scroll-behavior: smooth;
   overscroll-behavior-inline: contain;
   scroll-snap-type: inline mandatory;
+} */
+.testimonials-list {
+  display: grid; /* Changed from flex to grid for gallery layout */
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(300px, 1fr)
+  ); /* Added: Responsive grid with min column size of 300px */
+  gap: 20px; /* Updated: Increased spacing between grid items */
+  margin: 0; /* Adjusted to remove negative margins */
+  padding: 25px; /* Kept the same for consistent spacing */
+  padding-bottom: 35px; /* Kept the same for bottom padding */
+  overflow: visible; /* Updated: Removed horizontal scrolling */
 }
 
 .testimonials-item {
