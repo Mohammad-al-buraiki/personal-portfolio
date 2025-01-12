@@ -2,8 +2,8 @@ vCard - Personal Portfolio
 
 # sidebar
 
-alt = Richard hanrick
-Richard hanrick
+alt = Mohammad Al-&nbsp;Buraiki
+Mohammad Al-&nbsp;Buraiki
 Web developer
 
 Show Contacts
