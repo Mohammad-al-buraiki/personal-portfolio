@@ -1215,11 +1215,16 @@
           <section class="contact-form">
             <h3 class="h3 form-title">Contact Form</h3>
 
-            <form action="#" class="form" data-form>
+            <form
+              action="process_form.php"
+              method="POST"
+              class="form"
+              data-form
+            >
               <div class="input-wrapper">
                 <input
                   type="text"
-                  name="fullname"
+                  name="name"
                   class="form-input"
                   placeholder="Full name"
                   required
@@ -1244,7 +1249,7 @@
                 data-form-input
               ></textarea>
 
-              <button class="form-btn" type="submit" disabled data-form-btn>
+              <button class="form-btn" type="submit" data-form-btn>
                 <ion-icon name="paper-plane"></ion-icon>
                 <span>Send Message</span>
               </button>
