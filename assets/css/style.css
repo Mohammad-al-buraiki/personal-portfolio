@@ -123,7 +123,8 @@ a {
 }
 
 li {
-  list-style: none;
+  /* list-style: none; */
+  color: #b0b0b0;
 }
 
 img,
@@ -854,8 +855,10 @@ main {
 }
 
 .timeline-list {
-  font-size: var(--fs-6);
-  margin-left: 45px;
+  font-size: var(--fs-6); /* Keep the existing font size */
+  margin-left: 45px; /* Keep the existing margin */
+  list-style: none; /* Removes default bullet styling */
+  padding-left: 0; /* Removes extra padding */
 }
 
 .timeline-item {
@@ -873,9 +876,13 @@ main {
 }
 
 .timeline-list span {
-  color: var(--vegas-gold);
+  color: var(--vegas-gold); /* Keep the existing color for standalone spans */
   font-weight: var(--fw-400);
   line-height: 1.6;
+}
+
+.timeline-list ul li span {
+  color: white; /* If spans exist within bullet points, make them white */
 }
 
 .timeline-item:not(:last-child)::before {
@@ -947,6 +954,7 @@ main {
   height: 100%;
   border-radius: inherit;
 }
+/* added for skills */
 
 /*-----------------------------------*\
   #PORTFOLIO
@@ -1631,7 +1639,7 @@ textarea.form-input::-webkit-resizer {
    */
 
   .timeline-list {
-    margin-left: 65px;
+    margin-left: 65px; /* Keep the larger margin for bigger screens */
   }
 
   .timeline-item:not(:last-child)::before {
