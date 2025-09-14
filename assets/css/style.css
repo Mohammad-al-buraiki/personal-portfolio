@@ -2054,3 +2054,12 @@ textarea.form-input::-webkit-resizer {
     max-width: 700px;
   }
 }
+
+/* Role visibility */
+.role-block { display: none; }
+body[data-role-active="software"] .role-block[data-role="software"] { display: block; }
+body[data-role-active="ai-ml"]   .role-block[data-role="ai-ml"]   { display: block; }
+body[data-role-active="ui-ux"]   .role-block[data-role="ui-ux"]   { display: block; }
+
+/* Optional spacing so role blocks breathe */
+.about-text .role-block { margin-top: 0.75rem; }

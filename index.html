@@ -56,7 +56,7 @@
               Mohammad <span class="no-wrap">Al-Buraiki</span>
             </h1>
 
-            <p class="title">Software Engineer</p>
+            <p class="title" id="role-subtitle">Software Engineer</p>
           </div>
 
           <button class="info_more-btn" data-sidebar-btn>
@@ -173,10 +173,10 @@
 
         <article class="about active" data-page="about">
           <header>
-            <h2 class="h2 article-title">About me</h2>
+            <h2 class="h3 article-title">Hey! Want to know my stuff?</h2>
           </header>
 
-          <section class="about-text">
+          <!-- <section class="about-text">
             <p>
               I’m a passionate developer driven by the goal of making useful
               tools that positively impact people. Currently in my second year
@@ -188,38 +188,56 @@
               hundreds of thousands of sales and thousands of downloads. My
               focus is on creating functional, user-friendly, and meaningful
               solutions, while constantly improving and pushing boundaries.
-            </p>
+            </p></section> -->
+            
+          <section class="about-text">
+            <!-- Always visible -->
+            <div class="about-universal">
+              <p>
+                I’m passionate about creating and improving solutions that matter. Whether through design, 
+                development, or data, I enjoy solving problems, exploring ideas, and turning concepts into 
+                real, impactful results.
+              </p>
+            </div>
+
+            <!-- Software view -->
+            <div class="role-block" data-role="software">
+              <p>
+                I focus on product features, reliability, and shipping. Recent work includes a
+                delivery app UI and a full-stack photo app with auth, storage, and live updates.
+              </p>
+            </div>
+
+            <!-- AI/ML view -->
+            <div class="role-block" data-role="ai-ml">
+              <p>
+                I work on data pipelines, model training, and evaluation. I build reproducible
+                experiments, keep artifacts versioned, and validate results with solid metrics.
+              </p>
+            </div>
+
+            <!-- UI/UX view -->
+            <div class="role-block" data-role="ui-ux">
+              <p>
+                I start with user goals, then move from wireframes to polished visuals. I design
+                clear flows, readable typography, and responsive layouts that feel natural.
+              </p>
+            </div>
           </section>
 
-          <!--
-          - service
-        -->
+            <!--
+            - service
+          -->
 
           <section class="service">
             <h3 class="h3 service-title">What i'm doing</h3>
 
+
+            
             <ul class="service-list">
-              <li class="service-item">
-                <div class="service-icon-box">
-                  <img
-                    src="./assets/images/1.png
-                "
-                    alt="design icon"
-                    width="40"
-                  />
-                </div>
 
-                <div class="service-content-box">
-                  <h4 class="h4 service-item-title">Web Development</h4>
-
-                  <p class="service-item-text">
-                    Crafting modern, responsive, and efficient websites tailored
-                    to meet user needs.
-                  </p>
-                </div>
-              </li>
-
-              <li class="service-item">
+              
+                            <li class="service-item">
                 <div class="service-icon-box">
                   <img
                     src="./assets/images/2.png"
@@ -260,6 +278,25 @@
               <li class="service-item">
                 <div class="service-icon-box">
                   <img
+                    src="./assets/images/1.png"
+                    alt="design icon"
+                    width="40"
+                  />
+                </div>
+
+                <div class="service-content-box">
+                  <h4 class="h4 service-item-title">Web Development</h4>
+
+                  <p class="service-item-text">
+                    Crafting modern, responsive, and efficient websites tailored
+                    to meet user needs.
+                  </p>
+                </div>
+              </li>
+
+              <li class="service-item">
+                <div class="service-icon-box">
+                  <img
                     src="./assets/images/4.png"
                     alt="camera icon"
                     width="50"
@@ -270,7 +307,7 @@
                   <h4 class="h4 service-item-title">Continuous Learning</h4>
 
                   <p class="service-item-text">
-                    Constantly exploring new technologies and frameworks to stay
+                    Constantly exploring new technologies to stay
                     ahead and deliver cutting-edge solutions.
                   </p>
                 </div>
@@ -279,7 +316,7 @@
           </section>
 
           <section class="testimonials">
-            <h3 class="h3 testimonials-title">Quick Look at my Projects</h3>
+            <h3 class="h3 testimonials-title">Projects</h3>
 
             <ul class="testimonials-list has-scrollbar">
               <li class="testimonials-item">
@@ -375,37 +412,6 @@
                   </div>
                 </div>
               </li>
-
-              <!-- <li class="testimonials-item">
-                <div class="content-card" data-testimonials-item>
-                  <figure class="testimonials-avatar-box">
-                    <img
-                      src="./assets/images/avatar-4.png"
-                      alt="Henry william"
-                      width="60"
-                      data-testimonials-avatar
-                    />
-                  </figure>
-
-                  <h4
-                    class="h4 testimonials-item-title"
-                    data-testimonials-title
-                  >
-                    Henry william
-                  </h4>
-
-                  <div class="testimonials-text" data-testimonials-text>
-                    <p>
-                      Richard was hired to create a corporate identity. We were
-                      very pleased with the work done. She has a lot of
-                      experience and is very concerned about the needs of
-                      client. Lorem ipsum dolor sit amet, ullamcous cididt
-                      consectetur adipiscing elit, seds do et eiusmod tempor
-                      incididunt ut laborels dolore magnarels alia.
-                    </p>
-                  </div>
-                </div>
-              </li> -->
             </ul>
         </section>
 
@@ -447,67 +453,8 @@
                 </div>
               </div>
             </section>
-          </div>
-
-            <h3 class="h3 clients-title">Clients</h3>
-
-            <ul class="clients-list has-scrollbar">
-              <li class="clients-item">
-                <a href="#">
-                  <img
-                    src="./assets/images/logo-1-color.png"
-                    alt="client logo"
-                  />
-                </a>
-              </li>
-
-              <li class="clients-item">
-                <a href="#">
-                  <img
-                    src="./assets/images/logo-2-color.png"
-                    alt="client logo"
-                  />
-                </a>
-              </li>
-
-              <li class="clients-item">
-                <a href="#">
-                  <img
-                    src="./assets/images/logo-3-color.png"
-                    alt="client logo"
-                  />
-                </a>
-              </li>
-
-              <li class="clients-item">
-                <a href="#">
-                  <img
-                    src="./assets/images/logo-4-color.png"
-                    alt="client logo"
-                  />
-                </a>
-              </li>
-
-              <li class="clients-item">
-                <a href="#">
-                  <img
-                    src="./assets/images/logo-5-color.png"
-                    alt="client logo"
-                  />
-                </a>
-              </li>
-
-              <li class="clients-item">
-                <a href="#">
-                  <img
-                    src="./assets/images/logo-6-color.png"
-                    alt="client logo"
-                  />
-                </a>
-              </li>
-            </ul>
-          </section> -->
-        </article>
+           </div>
+          </article>
 
         <article class="resume" data-page="resume">
           <header>
@@ -548,49 +495,49 @@
               <h3 class="h3">Experience</h3>
             </div>
 
-<ol class="timeline-list">
-  <li class="timeline-item">
-    <h4 class="h4 timeline-item-title">Full-Stack Developer – InstaPic App</h4>
-    <span>Jul. 2024 – Sep. 2024</span>
-    <p class="timeline-text">
-      <ul>
-        <li>Designed and deployed a bilingual social media platform with real-time database functionality using React.js and Firebase Firestore.</li>
-        <li>Integrated secure user authentication and image uploads with Firebase Auth and Firebase Storage.</li>
-        <li>Developed dynamic, user-specific feeds with interactive features such as likes, comments, and real-time updates.</li>
-        <li>Managed version control using Git and configured automated deployment to Vercel for seamless hosting.</li>
-      </ul>
-    </p>
-  </li>
+          <ol class="timeline-list">
+            <li class="timeline-item">
+              <h4 class="h4 timeline-item-title">Full-Stack Developer – InstaPic App</h4>
+              <span>Jul. 2024 – Sep. 2024</span>
+              <p class="timeline-text">
+                <ul>
+                  <li>Designed and deployed a bilingual social media platform with real-time database functionality using React.js and Firebase Firestore.</li>
+                  <li>Integrated secure user authentication and image uploads with Firebase Auth and Firebase Storage.</li>
+                  <li>Developed dynamic, user-specific feeds with interactive features such as likes, comments, and real-time updates.</li>
+                  <li>Managed version control using Git and configured automated deployment to Vercel for seamless hosting.</li>
+                </ul>
+              </p>
+            </li>
 
-  <li class="timeline-item">
-    <h4 class="h4 timeline-item-title">Front-End Developer – Delivery App</h4>
-    <span>Mar. 2024 – May. 2024</span>
-    <p class="timeline-text">
-      <ul>
-        <li>Designed the app's UI from scratch using Canva, creating a cohesive and user-friendly visual experience.</li>
-        <li>Contributed to front-end development and documentation, ensuring a consistent design and timely delivery of features via Asana.</li>
-        <li>Conducted comprehensive testing for responsive design across diverse devices and use cases.</li>
-        <li>Played a pivotal role in achieving app success, leading to over 4,000 downloads and generating $450,000+ in sales.</li>
-      </ul>
-    </p>
-  </li>
+            <li class="timeline-item">
+              <h4 class="h4 timeline-item-title">Front-End Developer – Delivery App</h4>
+              <span>Mar. 2024 – May. 2024</span>
+              <p class="timeline-text">
+                <ul>
+                  <li>Designed the app's UI from scratch using Canva, creating a cohesive and user-friendly visual experience.</li>
+                  <li>Contributed to front-end development and documentation, ensuring a consistent design and timely delivery of features via Asana.</li>
+                  <li>Conducted comprehensive testing for responsive design across diverse devices and use cases.</li>
+                  <li>Played a pivotal role in achieving app success, leading to over 4,000 downloads and generating $450,000+ in sales.</li>
+                </ul>
+              </p>
+            </li>
 
-  <li class="timeline-item">
-    <h4 class="h4 timeline-item-title">Web Developer – Personal Portfolio Website</h4>
-    <span>Dec. 2024 – Jan. 2025</span>
-    <p class="timeline-text">
-      <ul>
-        <li>Built and deployed a responsive personal website to showcase projects and achievements.</li>
-        <li>Enhanced website design and responsiveness by optimizing CSS and implementing custom JavaScript for interactivity.</li>
-        <li>Integrated a contact form using PHP and MySQL to securely process and store user submissions.</li>
-        <li>Automated website data backups using Bash scripts for file compression and secure storage.</li>
-      </ul>
-    </p>
-  </li>
-</ol>
+            <li class="timeline-item">
+              <h4 class="h4 timeline-item-title">Web Developer – Personal Portfolio Website</h4>
+              <span>Dec. 2024 – Jan. 2025</span>
+              <p class="timeline-text">
+                <ul>
+                  <li>Built and deployed a responsive personal website to showcase projects and achievements.</li>
+                  <li>Enhanced website design and responsiveness by optimizing CSS and implementing custom JavaScript for interactivity.</li>
+                  <li>Integrated a contact form using PHP and MySQL to securely process and store user submissions.</li>
+                  <li>Automated website data backups using Bash scripts for file compression and secure storage.</li>
+                </ul>
+              </p>
+            </li>
+          </ol>
           </section>
 
-          <section class="skill">
+          <!-- <section class="skill">
             <h3 class="h3 skills-title">My Skills</h3>
           
             <ul class="skills-list content-card">
@@ -671,8 +618,115 @@
                 </div>
               </li>
             </ul>
-          </section>
-         </article>
+          </section> -->
+          <section class="skill">
+  <h3 class="h3 skills-title">My Skills</h3>
+
+  <!-- Software role -->
+  <ul class="skills-list content-card role-block" data-role="software">
+    <li class="skills-item">
+      <div class="title-wrapper">
+        <h5 class="h5">Full-Stack Development</h5>
+        <data value="95">95%</data>
+      </div>
+      <div class="skill-progress-bg"><div class="skill-progress-fill" style="width: 95%"></div></div>
+    </li>
+    <li class="skills-item">
+      <div class="title-wrapper">
+        <h5 class="h5">React.js</h5>
+        <data value="90">90%</data>
+      </div>
+      <div class="skill-progress-bg"><div class="skill-progress-fill" style="width: 90%"></div></div>
+    </li>
+    <li class="skills-item">
+      <div class="title-wrapper">
+        <h5 class="h5">Node.js</h5>
+        <data value="85">85%</data>
+      </div>
+      <div class="skill-progress-bg"><div class="skill-progress-fill" style="width: 85%"></div></div>
+    </li>
+    <li class="skills-item">
+      <div class="title-wrapper">
+        <h5 class="h5">SQL</h5>
+        <data value="80">80%</data>
+      </div>
+      <div class="skill-progress-bg"><div class="skill-progress-fill" style="width: 80%"></div></div>
+    </li>
+    <li class="skills-item">
+      <div class="title-wrapper">
+        <h5 class="h5">CI/CD Automation</h5>
+        <data value="75">75%</data>
+      </div>
+      <div class="skill-progress-bg"><div class="skill-progress-fill" style="width: 75%"></div></div>
+    </li>
+  </ul>
+
+  <!-- AI/ML role -->
+  <ul class="skills-list content-card role-block" data-role="ai-ml">
+    <li class="skills-item">
+      <div class="title-wrapper">
+        <h5 class="h5">Python (pandas, NumPy, SciPy)</h5>
+        <data value="90">90%</data>
+      </div>
+      <div class="skill-progress-bg"><div class="skill-progress-fill" style="width: 90%"></div></div>
+    </li>
+    <li class="skills-item">
+      <div class="title-wrapper">
+        <h5 class="h5">TensorFlow & PyTorch</h5>
+        <data value="85">85%</data>
+      </div>
+      <div class="skill-progress-bg"><div class="skill-progress-fill" style="width: 85%"></div></div>
+    </li>
+    <li class="skills-item">
+      <div class="title-wrapper">
+        <h5 class="h5">Data Engineering (SQL, ETL)</h5>
+        <data value="80">80%</data>
+      </div>
+      <div class="skill-progress-bg"><div class="skill-progress-fill" style="width: 80%"></div></div>
+    </li>
+    <li class="skills-item">
+      <div class="title-wrapper">
+        <h5 class="h5">Model Evaluation & Deployment</h5>
+        <data value="75">75%</data>
+      </div>
+      <div class="skill-progress-bg"><div class="skill-progress-fill" style="width: 75%"></div></div>
+    </li>
+  </ul>
+
+  <!-- UI/UX role -->
+  <ul class="skills-list content-card role-block" data-role="ui-ux">
+    <li class="skills-item">
+      <div class="title-wrapper">
+        <h5 class="h5">UI/UX Design</h5>
+        <data value="95">95%</data>
+      </div>
+      <div class="skill-progress-bg"><div class="skill-progress-fill" style="width: 95%"></div></div>
+    </li>
+    <li class="skills-item">
+      <div class="title-wrapper">
+        <h5 class="h5">Wireframing & Prototyping</h5>
+        <data value="90">90%</data>
+      </div>
+      <div class="skill-progress-bg"><div class="skill-progress-fill" style="width: 90%"></div></div>
+    </li>
+    <li class="skills-item">
+      <div class="title-wrapper">
+        <h5 class="h5">Responsive Front-End (HTML, CSS, JS)</h5>
+        <data value="85">85%</data>
+      </div>
+      <div class="skill-progress-bg"><div class="skill-progress-fill" style="width: 85%"></div></div>
+    </li>
+    <li class="skills-item">
+      <div class="title-wrapper">
+        <h5 class="h5">User Research</h5>
+        <data value="80">80%</data>
+      </div>
+      <div class="skill-progress-bg"><div class="skill-progress-fill" style="width: 80%"></div></div>
+    </li>
+  </ul>
+</section>
+
+        </article>
 
         <!--
         - #PORTFOLIO
@@ -684,26 +738,22 @@
           </header>
 
           <section class="projects">
-            <ul class="filter-list">
+            <!-- <ul class="filter-list">
               <li class="filter-item">
                 <button class="active" data-filter-btn>All</button>
               </li>
               <li class="filter-item">
                 <button data-filter-btn>Full Stack</button>
               </li>
-                            <li class="filter-item">
+                <li class="filter-item">
                 <button data-filter-btn>AI/ML</button>
               </li>
               <li class="filter-item">
                 <button data-filter-btn>Front-End</button>
               </li>
-              <!-- <li class="filter-item">
-                <button data-filter-btn>Back-End</button>
-              </li> -->
-              
-            </ul>
+            </ul> -->
 
-            <div class="filter-select-box">
+            <!-- <div class="filter-select-box">
               <button class="filter-select" data-select>
                 <div class="select-value" data-selecct-value>
                   All
@@ -718,7 +768,12 @@
                 <li class="select-item">
                   <button data-select-item>All</button>
                 </li>
-
+                    <li class="select-item">
+                  <button data-select-item>Full Stack</button>
+                </li>
+                  <li class="select-item">
+                  <button data-select-item>AI/ML</button>
+                </li>
                 <li class="select-item">
                   <button data-select-item>Front-End</button>
                 </li>
@@ -726,19 +781,14 @@
                 <li class="select-item">
                   <button data-select-item>Backend</button>
                 </li>
-
-                <li class="select-item">
-                  <button data-select-item>Full Stack</button>
-                </li>
               </ul>
-            </div>
+            </div> -->
 
             <ul class="project-list">
               <!-- First item -->
               <li
               class="project-item active"
-              data-filter-item
-              data-category="full stack"
+              data-roles="software, ui-ux"
             >
               <a href="https://instagramy-mohammad-alburaiki.vercel.app/mmr" target="_blank" rel="noopener noreferrer">
                 <figure class="project-img">
@@ -758,82 +808,77 @@
                 <p class="project-category">Full-Stack Development</p>
               </a>
             </li>
-            <li
-            class="project-item active"
-            data-filter-item
-            data-category="front-end"
-          >
-            <a href="https://www.stronix.co/projects/otlob/">
-              <figure class="project-img">
-                <div class="project-item-icon-box">
-                  <ion-icon name="eye-outline"></ion-icon>
-                </div>
+              <li
+              class="project-item active"
+              data-roles="front-end, ui-ux"
+            >
+              <a href="https://www.stronix.co/projects/otlob/">
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
 
-                <img
-                  src="./assets/images/otlob-preview.jpg"
-                  alt="fundo"
-                  loading="lazy"
-                />
-              </figure>
+                  <img
+                    src="./assets/images/otlob-preview.jpg"
+                    alt="fundo"
+                    loading="lazy"
+                  />
+                </figure>
 
-              <h3 class="project-title">Otlob Delivery App</h3>
+                <h3 class="project-title">Otlob Delivery App</h3>
 
-              <p class="project-category">Front-End Design + Quality Assurance</p>
-            </a>
-          </li>
-          
+                <p class="project-category">Front-End Design + Quality Assurance</p>
+              </a>
+            </li>
 
-          <li
-          class="project-item active"
-          data-filter-item
-          data-category="front-end"
-        >
-          <a href="https://www.stronix.co/projects/accountant/">
-            <figure class="project-img">
-              <div class="project-item-icon-box">
-                <ion-icon name="eye-outline"></ion-icon>
-              </div>
+              <li
+              class="project-item active"
+              data-roles="front-end, ui-ux"
+            >
+              <a href="https://www.stronix.co/projects/accountant/">
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
 
-              <img
-                src="./assets/images/DA-preview.jpg"
-                alt="fundo"
-                loading="lazy"
-              />
-            </figure>
+                  <img
+                    src="./assets/images/DA-preview.jpg"
+                    alt="fundo"
+                    loading="lazy"
+                  />
+                </figure>
 
-            <h3 class="project-title">Digital Accountant App</h3>
+                <h3 class="project-title">Digital Accountant App</h3>
 
-            <p class="project-category">Front-End Design</p>
-          </a>
-        </li>
-        <li
-        class="project-item active"
-        data-filter-item
-        data-category="front-end"
-      >
-        <a href="https://www.stronix.co/projects/gulfgold/">
-          <figure class="project-img">
-            <div class="project-item-icon-box">
-              <ion-icon name="eye-outline"></ion-icon>
-            </div>
+                <p class="project-category">Front-End Design</p>
+              </a>
+            </li>
+              <li
+              class="project-item active"
+              data-roles="front-end, ui-ux"
+            >
+              <a href="https://www.stronix.co/projects/gulfgold/">
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
 
-            <img
-              src="./assets/images/GG-preview.jpg"
-              alt="fundo"
-              loading="lazy"
-            />
-          </figure>
+                  <img
+                    src="./assets/images/GG-preview.jpg"
+                    alt="fundo"
+                    loading="lazy"
+                  />
+                </figure>
 
-          <h3 class="project-title">Gulf Gold App</h3>
+                <h3 class="project-title">Gulf Gold App</h3>
 
-          <p class="project-category">Front-End Design</p>
-        </a>
-      </li>
+                <p class="project-category">Front-End Design</p>
+              </a>
+            </li>
 <!-- second item -->
               <li
                 class="project-item active"
-                data-filter-item
-                data-category="front-end"
+                data-roles="front-end, ui-ux"
               >
                 <a href="http://127.0.0.1:5500/index.html#">
                   <figure class="project-img">
@@ -852,7 +897,30 @@
 
                   <p class="project-category">Front-End Design</p>
                 </a>
-              </li>
+            </li>
+              <li
+                class="project-item active"
+                data-roles="ai-ml"
+              >
+                <a href="https://github.com/Mohammad-al-buraiki/md_sec_predictor">
+                  <figure class="project-img">
+                    <div class="project-item-icon-box">
+                      <ion-icon name="eye-outline"></ion-icon>
+                    </div>
+
+                    <img
+                      src="./assets/images/portfolio-preview.png"
+                      alt="portfolio"
+                      loading="lazy"
+                    />
+                  </figure>
+
+                  <h3 class="project-title">Predicting Distillate Flow Rate with Machine Learning</h3>
+
+                  <p class="project-category">AI/ML</p>
+                </a>
+            </li>
+
 <!-- third item -->
  
 
@@ -866,7 +934,7 @@
         - #BLOG
       -->
 
-        <article class="blog" data-page="blog">
+        <!-- <article class="blog" data-page="blog">
           <header>
             <h2 class="h2 article-title">Blog</h2>
           </header>
@@ -1056,7 +1124,7 @@
               </li>
             </ul>
           </section>
-        </article>
+        </article> -->
 
         <!--
         - #CONTACT

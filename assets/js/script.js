@@ -56,62 +56,62 @@ overlay.addEventListener("click", testimonialsModalFunc);
 
 
 // custom select variables
-const select = document.querySelector("[data-select]");
-const selectItems = document.querySelectorAll("[data-select-item]");
-const selectValue = document.querySelector("[data-selecct-value]");
-const filterBtn = document.querySelectorAll("[data-filter-btn]");
+// const select = document.querySelector("[data-select]");
+// const selectItems = document.querySelectorAll("[data-select-item]");
+// const selectValue = document.querySelector("[data-selecct-value]");
+// const filterBtn = document.querySelectorAll("[data-filter-btn]");
 
-select.addEventListener("click", function () { elementToggleFunc(this); });
+// select.addEventListener("click", function () { elementToggleFunc(this); });
 
 // add event in all select items
-for (let i = 0; i < selectItems.length; i++) {
-  selectItems[i].addEventListener("click", function () {
+// for (let i = 0; i < selectItems.length; i++) {
+//   selectItems[i].addEventListener("click", function () {
 
-    let selectedValue = this.innerText.toLowerCase();
-    selectValue.innerText = this.innerText;
-    elementToggleFunc(select);
-    filterFunc(selectedValue);
+//     let selectedValue = this.innerText.toLowerCase();
+//     selectValue.innerText = this.innerText;
+//     elementToggleFunc(select);
+//     filterFunc(selectedValue);
 
-  });
-}
+//   });
+// }
 
 // filter variables
-const filterItems = document.querySelectorAll("[data-filter-item]");
+// const filterItems = document.querySelectorAll("[data-filter-item]");
 
-const filterFunc = function (selectedValue) {
+// const filterFunc = function (selectedValue) {
 
-  for (let i = 0; i < filterItems.length; i++) {
+//   for (let i = 0; i < filterItems.length; i++) {
 
-    if (selectedValue === "all") {
-      filterItems[i].classList.add("active");
-    } else if (selectedValue === filterItems[i].dataset.category) {
-      filterItems[i].classList.add("active");
-    } else {
-      filterItems[i].classList.remove("active");
-    }
+//     if (selectedValue === "all") {
+//       filterItems[i].classList.add("active");
+//     } else if (selectedValue === filterItems[i].dataset.category) {
+//       filterItems[i].classList.add("active");
+//     } else {
+//       filterItems[i].classList.remove("active");
+//     }
 
-  }
+//   }
 
-}
+// }
 
 // add event in all filter button items for large screen
-let lastClickedBtn = filterBtn[0];
+// let lastClickedBtn = filterBtn[0];
 
-for (let i = 0; i < filterBtn.length; i++) {
+// for (let i = 0; i < filterBtn.length; i++) {
 
-  filterBtn[i].addEventListener("click", function () {
+//   filterBtn[i].addEventListener("click", function () {
 
-    let selectedValue = this.innerText.toLowerCase();
-    selectValue.innerText = this.innerText;
-    filterFunc(selectedValue);
+//     let selectedValue = this.innerText.toLowerCase();
+//     selectValue.innerText = this.innerText;
+//     filterFunc(selectedValue);
 
-    lastClickedBtn.classList.remove("active");
-    this.classList.add("active");
-    lastClickedBtn = this;
+//     lastClickedBtn.classList.remove("active");
+//     this.classList.add("active");
+//     lastClickedBtn = this;
 
-  });
+//   });
 
-}
+// }
 
 
 
@@ -136,24 +136,92 @@ for (let i = 0; i < formInputs.length; i++) {
 
 
 
-// page navigation variables
+// page navigation
 const navigationLinks = document.querySelectorAll("[data-nav-link]");
 const pages = document.querySelectorAll("[data-page]");
 
-// add event to all nav link
-for (let i = 0; i < navigationLinks.length; i++) {
-  navigationLinks[i].addEventListener("click", function () {
+navigationLinks.forEach((btn) => {
+  btn.addEventListener("click", () => {
+    // prefer data-target if present; otherwise fall back to button text
+    const target = (btn.dataset.target || btn.textContent).trim().toLowerCase();
 
-    for (let i = 0; i < pages.length; i++) {
-      if (this.innerHTML.toLowerCase() === pages[i].dataset.page) {
-        pages[i].classList.add("active");
-        navigationLinks[i].classList.add("active");
-        window.scrollTo(0, 0);
-      } else {
-        pages[i].classList.remove("active");
-        navigationLinks[i].classList.remove("active");
-      }
-    }
+    // toggle pages
+    pages.forEach((page) => {
+      const match = page.dataset.page === target;
+      page.classList.toggle("active", match);
+    });
 
+    // toggle nav buttons
+    navigationLinks.forEach((link) => {
+      const isActive = link === btn;
+      link.classList.toggle("active", isActive);
+    });
+
+    window.scrollTo({ top: 0, behavior: "smooth" });
   });
-}
+});
+
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  const ROLE_CONFIG = {
+    "software": { subtitle: "Software Engineer", defaultPage: "about" },
+    "ai-ml":   { subtitle: "AI/ML Developer", defaultPage: "about" },
+    "ui-ux":   { subtitle: "UI/UX Designer", defaultPage: "about" },
+  };
+
+  // 1) Read role from URL, then localStorage, else default
+  const params = new URLSearchParams(window.location.search);
+  let role = params.get("role") || localStorage.getItem("activeRole") || "software";
+  if (!ROLE_CONFIG[role]) role = "software";
+
+  // 2) Persist and expose role to the DOM
+  localStorage.setItem("activeRole", role);
+  document.body.setAttribute("data-role-active", role);
+
+  // 3) Update the small subtitle under your name
+  const subtitleEl = document.getElementById("role-subtitle");
+  if (subtitleEl) subtitleEl.textContent = ROLE_CONFIG[role].subtitle;
+
+  // 4) Update the browser tab title
+  document.title = `Mohammad Al-Buraiki · ${ROLE_CONFIG[role].subtitle}`;
+
+  // 5) Open the default tab for this role
+  function setActivePage(pageId) {
+    // toggle articles
+    document.querySelectorAll("article[data-page]").forEach(a => {
+      a.classList.toggle("active", a.dataset.page === pageId);
+    });
+
+    // toggle navbar buttons by their text labels
+    document.querySelectorAll(".navbar .navbar-link").forEach(btn => {
+      const label = btn.textContent.trim().toLowerCase(); // about, resume, projects, contact
+      btn.classList.toggle("active", label === pageId);
+    });
+  }
+
+  setActivePage(ROLE_CONFIG[role].defaultPage);
+
+  // Show only projects that match the active role.
+  function applyRoleToProjects(activeRole) {
+    const items = Array.from(document.querySelectorAll(".project-item"));
+    let shown = 0;
+
+    items.forEach(li => {
+      const rolesAttr = li.getAttribute("data-roles");
+      const isAll = !rolesAttr || rolesAttr.trim().toLowerCase() === "all";
+      const roles = isAll ? [] : rolesAttr.split(",").map(s => s.trim().toLowerCase());
+      const match = isAll || roles.includes(activeRole);
+      li.style.display = match ? "" : "none";
+      if (match) shown++;
+    });
+
+    // Optional fallback. If nothing matches, show all so the grid is never empty.
+    if (shown === 0) items.forEach(li => (li.style.display = ""));
+  }
+
+  applyRoleToProjects(role);
+
+
+
+});
