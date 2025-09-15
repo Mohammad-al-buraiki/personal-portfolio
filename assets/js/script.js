@@ -202,6 +202,61 @@ document.addEventListener("DOMContentLoaded", () => {
 
   setActivePage(ROLE_CONFIG[role].defaultPage);
 
+    // === Category/Role sync ===
+  // Treat category == role so we can reuse your role CSS & subtitle.
+  const categoryBar = document.getElementById("category-bar");
+  const catButtons = categoryBar ? categoryBar.querySelectorAll("[data-set-category]") : [];
+
+  function filterProjectsBy(category) {
+    const items = document.querySelectorAll(".project-item");
+    let shown = 0;
+    items.forEach(li => {
+      const rolesAttr = (li.getAttribute("data-roles") || "").toLowerCase();
+      const isAll = rolesAttr === "" || rolesAttr === "all";
+      const roles = isAll ? [] : rolesAttr.split(",").map(s => s.trim());
+      const match = isAll || roles.includes(category);
+      li.style.display = match ? "" : "none";
+      if (match) shown++;
+    });
+    if (shown === 0) items.forEach(li => (li.style.display = "")); // safety fallback
+  }
+
+  function setCategory(category) {
+    // 1) Persist & expose (skills/about already react via CSS)
+    localStorage.setItem("activeRole", category);
+    document.body.setAttribute("data-role-active", category);
+
+    // 2) Update subtitle + tab title using your ROLE_CONFIG
+    if (ROLE_CONFIG[category]) {
+      const subtitleEl = document.getElementById("role-subtitle");
+      if (subtitleEl) subtitleEl.textContent = ROLE_CONFIG[category].subtitle;
+      document.title = `Mohammad Al-Buraiki · ${ROLE_CONFIG[category].subtitle}`;
+    }
+
+    // 3) Filter projects to this category
+    filterProjectsBy(category);
+
+    // 4) Visually update category buttons
+    catButtons.forEach(btn => {
+      btn.classList.toggle("active", btn.dataset.setCategory === category);
+    });
+
+    // 5) Keep the URL’s role param in sync (nice for sharing)
+    const params = new URLSearchParams(location.search);
+    params.set("role", category);
+    history.replaceState(null, "", `${location.pathname}?${params.toString()}${location.hash}`);
+  }
+
+  // Initialize category from role (so /ai-ml picks AI/ML)
+  setCategory(role);
+
+  // Wire button clicks
+  catButtons.forEach(btn => {
+    btn.addEventListener("click", () => setCategory(btn.dataset.setCategory));
+  });
+
+
+
   // Show only projects that match the active role.
   function applyRoleToProjects(activeRole) {
     const items = Array.from(document.querySelectorAll(".project-item"));

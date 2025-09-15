@@ -2063,3 +2063,17 @@ body[data-role-active="ui-ux"]   .role-block[data-role="ui-ux"]   { display: blo
 
 /* Optional spacing so role blocks breathe */
 .about-text .role-block { margin-top: 0.75rem; }
+#category-bar { display: flex; gap: .5rem; flex-wrap: wrap; margin-bottom: .75rem; }
+#category-bar .filter-item button.active { opacity: 1; }
+#category-bar .filter-item button { opacity: .7; }
+
+#category-bar .filter-item {
+  margin: 12px;
+}
+
+.resume-block {
+  display: none;
+}
+body[data-role-active="software"] .resume-block[data-role="software"] {display: block;}
+body[data-role-active="ai-ml"] .resume-block[data-role="ai-ml"] {display: block;}
+body[data-role-active="ui-ux"] .resume-block[data-role="ui-ux"] {display: block;}
